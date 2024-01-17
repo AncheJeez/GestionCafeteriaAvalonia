@@ -1,0 +1,240 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="GestionDonutsAJSG.MainWindow"
+        Title="GestionDonutsAJSG"
+        Background="Azure"
+        Icon="Donuts\donuts_choco1.png"
+        Height="575"
+        Width="700"
+        CanResize="false">
+    <Border BorderBrush="DarkGray" BorderThickness="0.5" Width="" Height="">
+        <Canvas>
+            <Image x:Name="BackgroundImage"
+                   Source="Donuts/colorful-sugar-flakes-free-png.webp"
+                   Height="800" />
+            <DockPanel>
+                <!--Panel de arriba-->
+                <StackPanel x:Name="PanelVerde"
+                            Background="#55399EE5"
+                            Margin="20"
+                            DockPanel.Dock="Top">
+                    <RelativePanel>
+                        <Label x:Name="LblUno"
+                               Margin="10"
+                               Foreground="Black">
+                            ID
+                        </Label>
+                        <TextBox x:Name="txBxId"
+                                 RelativePanel.RightOf="LblUno"
+                                 Margin="50,10,0,0">
+                            Prueba2
+                        </TextBox>
+                        <Label x:Name="LblDos"
+                               RelativePanel.Below="LblUno"
+                               Margin="10"
+                               Foreground="Black">
+                            Nombre
+                        </Label>
+                        <TextBox x:Name="txBxNombre"
+                                 RelativePanel.RightOf="LblDos"
+                                 RelativePanel.Below="LblUno"
+                                 Margin="10">
+                            Prueba4
+                        </TextBox>
+                        <Label x:Name="LblTres"
+                               RelativePanel.Below="LblDos"
+                               Margin="10"
+                               Foreground="Black">
+                            Precio
+                        </Label>
+                        <TextBox x:Name="txBxPrecio"
+                                 RelativePanel.RightOf="LblDos"
+                                 RelativePanel.Below="LblDos"
+                                 Margin="10">
+                            Prueba6
+                        </TextBox>
+                        <Label x:Name="LblCuatro"
+                               RelativePanel.Below="LblTres"
+                               Margin="10"
+                               Foreground="Black">
+                            Calidad
+                        </Label>
+                        <TextBox x:Name="txBxCalidad"
+                                 RelativePanel.RightOf="LblDos"
+                                 RelativePanel.Below="LblTres"
+                                 Margin="10">
+                            Prueba8
+                        </TextBox>
+                        <Label x:Name="LblCinco"
+                               Margin="350,10,0,0"
+                               Foreground="Black">
+                            In Stock
+                        </Label>
+                        <CheckBox x:Name="chBxStock"
+                                  RelativePanel.RightOf="LblCinco"
+                                  Margin="7"
+                                  Foreground="Black" />
+                        <Label x:Name="LblSeis"
+                               RelativePanel.Below="LblCinco"
+                               Margin="350,10,0,0"
+                               Foreground="Black">
+                            Donuts registrados
+                        </Label>
+                        <TextBox x:Name="txBoxNumDonuts"
+                                 RelativePanel.RightOf="LblSeis"
+                                 RelativePanel.Below="LblUno">
+                            Contenido
+                        </TextBox>
+                        <Image x:Name="Image"
+                               RelativePanel.Below="LblSeis"
+                               Margin="250,10,0,0"
+                               Source="Donuts\default.png"
+                               Height="200" />
+                        <Button x:Name="btnFileChooser"
+                                RelativePanel.RightOf="Image"
+                                RelativePanel.Below="LblSeis"
+                                Click="fileChooser"
+                                Background="Orange"
+                                Margin="40,80,0,0"
+                                Foreground="Black">
+                            File Chooser
+                        </Button>
+                    </RelativePanel>
+                </StackPanel>
+                <!--Panel de abajo-->
+                <StackPanel x:Name="PanelBotones"
+                            Margin="20"
+                            DockPanel.Dock="Bottom"
+                            HorizontalAlignment="Center">
+                    <RelativePanel>
+                        <!--Panel botones azul-->
+                        <StackPanel x:Name="PanelAzul"
+                                    Background="#55EF6AF5"
+                                    Margin="100,20,20,20"
+                                    DockPanel.Dock="Bottom"
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center">
+                            <DockPanel>
+                                <StackPanel x:Name="PanelSigAnt"
+                                            Background="#554B9FF3"
+                                            Margin="10"
+                                            DockPanel.Dock="Top"
+                                            Orientation="Horizontal"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center">
+                                    <Button Name="BtnAnterior"
+                                            Click="btnAnteriorClick"
+                                            Background="Orange"
+                                            Margin="20"
+                                            Foreground="Black">
+                                        Anterior
+                                    </Button>
+                                    <Button Name="BtnSiguiente"
+                                            Click="btnSiguienteClick"
+                                            Background="Orange"
+                                            Margin="20"
+                                            Foreground="Black">
+                                        Siguiente
+                                    </Button>
+                                </StackPanel>
+                                <StackPanel x:Name="PanelCreModEli"
+                                            Background="#554B9FF3"
+                                            Margin="10"
+                                            DockPanel.Dock="Bottom"
+                                            Orientation="Horizontal"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center">
+                                    <Button Name="BtnCrear"
+                                            Click="btnCrear"
+                                            Background="Orange"
+                                            Margin="20"
+                                            Foreground="Black">
+                                        Crear
+                                    </Button>
+                                    <Button Name="BtnModificar"
+                                            Click="btnModificar"
+                                            Background="Orange"
+                                            Margin="20"
+                                            Foreground="Black">
+                                        Modificar
+                                    </Button>
+                                    <Button Name="BtnEliminar"
+                                            Click="btnEliminar"
+                                            Background="Orange"
+                                            Margin="20"
+                                            Foreground="Black">
+                                        Eliminar
+                                    </Button>
+                                </StackPanel>
+                            </DockPanel>
+                        </StackPanel>
+                        <!--Panel botones verde-->
+                        <StackPanel Background="#554B9FF3"
+                                    RelativePanel.RightOf="PanelAzul"
+                                    Margin="40"
+                                    DockPanel.Dock="Bottom"
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center">
+                            <DockPanel>
+                                <Button Name="BtnGuardar"
+                                        DockPanel.Dock="Top"
+                                        Click="btnGuardar"
+                                        Background="Orange"
+                                        Margin="20"
+                                        Foreground="Black">
+                                    Guardar
+                                </Button>
+                                <Button Name="BtnCargar"
+                                        DockPanel.Dock="Bottom"
+                                        Click="btnCargar"
+                                        Background="Orange"
+                                        Margin="20"
+                                        Foreground="Black">
+                                    Cargar
+                                </Button>
+                            </DockPanel>
+                        </StackPanel>
+                    </RelativePanel>
+                </StackPanel>
+            </DockPanel>
+            <!--Meter aqui el "dialog" con el que mostrar informacion-->
+            <StackPanel x:Name="PanelDialogo"
+                        Background="Turquoise"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal"
+                        Margin="250">
+                <RelativePanel>
+                    <Label x:Name="LblDialogo"
+                           Margin="30">
+                        Contenido
+                    </Label>
+                    <Button x:Name="BtnAceptar"
+                            Click="btnAceptar"
+                            Background="Orange"
+                            Margin="20"
+                            Foreground="Black"
+                            HorizontalAlignment="Center"
+                            RelativePanel.Below="LblDialogo">
+                        Aceptar
+                    </Button>
+                    <Button x:Name="BtnCancelar"
+                            Click="btnCancelar"
+                            Background="Orange"
+                            Margin="20"
+                            Foreground="Black"
+                            HorizontalAlignment="Center"
+                            RelativePanel.Below="LblDialogo"
+                            RelativePanel.RightOf="BtnAceptar">
+                        Cancelar
+                    </Button>
+                </RelativePanel>
+            </StackPanel>
+        </Canvas>
+    </Border>
+</Window>
